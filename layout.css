@@ -11,7 +11,7 @@ body{
     background-color: white;
     margin: 5px;
     padding: 1px; 
-    border: solid, 2px, black;
+    border: solid, 1px, black;
     border-radius: 10px;
 }
 .nav li{
@@ -24,4 +24,48 @@ body{
 
 #aboutPara{
     margin: 5px;
+}
+
+.artistRecs{
+    background-color: lightgoldenrodyellow;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 45%;
+}
+#artistTable tr, td{
+    text-align: center;
+    width: 23.5%;
+}
+
+/* artist rec button */
+.button-13 {
+  background-color: rgb(221, 157, 221);
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: white;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+  padding: 0 10px 0 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+.button-13:hover {
+  background-color: rgb(241, 181, 241);
+}
+.button-13:focus {
+  border-color: white;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
 }
