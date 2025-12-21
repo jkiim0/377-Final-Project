@@ -19,8 +19,6 @@ async function artistRecs(){
 
     showToast("Finding similar artists for " + artistName + "...");
 
-    // document.getElementById('waitMessage').innerHTML = `<h4>Finding similar artists</h4>`;
-
     const artists = fetch(`https://tastedive.com/api/similar?type=music&q=${artistName}&limit=10&info=1&k=1062477-JennaKim-3CB98006&format=json`).then(result =>
         result.json()
     );
@@ -55,6 +53,5 @@ async function artistRecs(){
         artistsTable.append(tableRow);
     });
 
-    // document.getElementById('waitMessage').style.display = 'none';
     artistsTable.style.display = 'table';
 }

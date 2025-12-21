@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="layout.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js" defer></script>
         <script src="carousel.js" defer></script>
+        <script src="home.js" defer></script>
     </head>
     <body>
         <!-- heading for home page -->
@@ -29,5 +30,19 @@
         <br>
 
         <div id="carousel" style="width: 600px; height: 200px;"></div>
+
+        <div class="userInfo">
+            <h3 style="text-align: center;">Sign up</h3>
+            <label id="firstName">First name:</label>
+            <input id="firstNameInput">
+            <br><br>
+            <label id="lastName">Last name:</label>
+            <input id="lastNameInput">
+            <br><br>
+            <label id="email">Email:</label>
+            <input id="emailInput">
+            <br><br>
+            <button class="button-60" role="button" onclick="getInfo()">submit</button>
+        </div>
     </body>
 </html>
