@@ -1,0 +1,21 @@
+{
+  "name": "supabaseapp",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "jenna kim",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e '*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@emailcheck/email-validator-js": "^2.14.2",
+    "@supabase/supabase-js": "^2.89.0",
+    "body-parser": "^2.2.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
