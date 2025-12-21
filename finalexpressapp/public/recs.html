@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>DiscoverMusic Recs Page</title>
+        <link rel="stylesheet" href="layout.css">
+        <script defer src="recommendation.js"></script>
+        <style>
+            #artistTable{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- heading for home page -->
+        <div class="recsHead">
+            <h1>Recommendations</h1>
+        </div>
+        
+        <!-- website navigation -->
+        <div class="nav">
+            <ul>
+                <li><a href=home.html>Home</a></li>
+                <li><strong>|</strong></li>
+                <li><a href=recs.html>Recommendations</a></li>
+                <li><strong>|</strong></li>
+                <li><a href=about.html>About</a></li>
+            </ul>
+        </div>
+
+        <div class="artistRecs" style="text-align: center;">
+            <h3>Find Similar Artists</h3>
+            <label id-="artistPrompt">Artist name: </label>
+            <input id="artistName" type="text" placeholder="Justin Bieber" required>
+            <br><br>
+            <button class="button-13" role="button" onclick="return artistRecs()">Search</button>
+
+            <br><br>
+
+            <p id="waitMessage"></p>
+            <table id="artistTable">
+                <tr>
+                    <th>Similar Artists</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

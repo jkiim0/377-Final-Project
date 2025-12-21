@@ -1,0 +1,13 @@
+{
+  "name": "finalnodeapp",
+  "version": "1.0.0",
+  "description": "this is the node app for the 377 final project",
+  "license": "ISC",
+  "author": "jenna kim",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
