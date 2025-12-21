@@ -1,8 +1,23 @@
 // api key: 1062477-JennaKim-3CB98006
+function showToast(message){
+    Toastify({
+        text: message,
+        duration: 3000,
+        gravity: "top",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+
+    })
+};
 
 async function artistRecs(){
     const artistName = document.getElementById("artistName").value;
     console.log('artist:', artistName);
+
+    showToast("Finding similar artists for" + artistName + "...");
 
     document.getElementById('waitMessage').innerHTML = `<h4>Finding similar artists</h4>`;
 
@@ -23,6 +38,8 @@ async function artistRecs(){
         artistsTable.innerHTML = `<h4>Artist not found</h4>`;
         return;
     }
+
+    showToast("Found " + data.length + " similar artists!");
 
     data.forEach((artist) => {
         const tableRow = document.createElement('tr');
