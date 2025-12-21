@@ -43,6 +43,7 @@ async function loadRandomAlbum() {
   img.src = imageUrl;
 
   carousel.appendChild(img);
+  console.log('display image');
 }
 
 loadRandomAlbum();

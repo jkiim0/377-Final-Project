@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
         console.log('user requesting default route');
         res.writeHead(200, {'Content-Type': 'application/json'});
         const output = {
-            phrase: 'Hello Word',
+            phrase: 'Hello!',
         };
         res.write(JSON.stringify(output));
         console.log('user response for default route being returned');
