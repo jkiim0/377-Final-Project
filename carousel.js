@@ -40,7 +40,7 @@ async function loadRandomAlbum() {
   carousel.innerHTML = "";
 
   const img = document.createElement("img");
-  img.src = image;
+  img.src = imageUrl;
 
   carousel.appendChild(img);
 }
