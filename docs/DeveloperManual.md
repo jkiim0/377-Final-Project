@@ -18,6 +18,13 @@ How to Run:
 
 API:
 
+*Currently no tests have been implemented
+
 Bugs:
+- Searches may fail if the artists name is misspelled
 
 Road-Map for Future Development:
+- Dedicated profiles for user authentication
+- Improvement in recommedation of artist
+- Add recommendation based on particular songs
+- Improved responses and mobile development.
