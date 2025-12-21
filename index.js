@@ -1,14 +1,20 @@
 const express = require('express');
+const path = require("path");
 const bodyParser = require('body-parser');
 const supabaseClient = require('../../../../../supabaseapp/node_modules/@supabase/supabase-js/src/lib/rest/types/common/common');
 const {isValidEmail} = require('@emailcheck/email-validator-js');
 const dotenv = require('dotenv/lib/main');
 
 const app = express();
-const port = 3000;
+//const port = 3000;
 dotenv.config();
 
-app.use(bodyParser.json());
+app.use(express.json());
+
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 
 // initialize supabase client
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -68,6 +74,7 @@ app.post('/user', async (req, res) => {
     res.send(req.body);
 });
 
-app.listen(port, () => {
-    console.log('app is available on port:', port);
-});
+module.exports = app;
+// app.listen(port, () => {
+//     console.log('app is available on port:', port);
+// });

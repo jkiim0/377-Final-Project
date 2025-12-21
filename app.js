@@ -1,12 +1,13 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const port = 3000;
+//const port = 3000;
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.sendFile('public/home.html', {root: __dirname});
-    res.sendFile('public/recs.html', {root: __dirname});
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
+    //res.sendFile('public/recs.html', {root: __dirname});
 });
 
 // added to try making sign up connect with back end, but not yet working
@@ -54,6 +55,7 @@ app.post('/', (req, res) => {
     res.send(JSON.stringify(output));
 });
 
-app.listen(port, () => {
-    console.log(`express app listening on port: ${port}`);
-})
+module.exports = app;
+// app.listen(port, () => {
+//     console.log(`express app listening on port: ${port}`);
+// })
