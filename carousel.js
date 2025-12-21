@@ -1,36 +1,48 @@
-const mbids = [
-    "10bf95b6-30e3-44f1-817f-45762cdc0de0",
-    "99b09d02-9cc9-3fed-8431-f162165a9371",
-    "453eb20f-1560-40e2-ab04-fb6466f5866c",
-    "bbca1611-4ca2-4e62-a606-b156d738fe9b",
-    "c68a3335-80b8-448a-9fdd-a1ac2cf6967c",
-    "e91fe4b3-172d-4ac9-b6d4-50b3f0dc1c03",
-    "50fe703f-173e-496a-9155-b2a495d704e5",
-    "9402f68c-bc93-4278-8515-01d06fda1b39"
+const key = "65bd56a4dfbcd5f890245e965a661290";
+
+const artists = [
+  "Kehlani",
+  "Beyoncé",
+  "Daft Punk",
+  "Florence and the Machine",
+  "Kendrick Lamar",
+  "Nirvana",
+  "Adele",
+  "J Balvin"
 ];
 
-function randomize(list){
-    return list[Math.floor(Math.random() * list.length)];
+function randomize(list) {
+  return list[Math.floor(Math.random() * list.length)];
 }
 
-const mbid = randomize(mbids);
+async function loadRandomAlbum() {
+  const artist = randomize(artists);
 
-async function images() {
-    fetch(`https://coverartarchive.org/release/${mbid}/front`)
-        .then(response => response.json())
-        .then( data => {
-            console.log(data);
-            const carousel = document.getElementById('carousel');
-            carousel.innerHTML = '';
+  const url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${encodeURIComponent(
+    artist
+  )}&api_key=${key}&format=json`;
 
-            data.message.forEach( image => {
-                const img = document.createElement('img');
-                img.src = image;
-                carousel.appendChild(img);
-            });
+  const response = await fetch(url);
+  const data = await response.json();
 
-            simpleslider.getSlider();        
-        })   
+  const albums = data.topalbums.album;
+  const album = randomize(albums);
 
+  let imageUrl = "";
+
+  album.image.forEach(img => {
+    if (img.size === "extralarge") {
+    imageUrl = img["#text"];
+    }
+  });
+
+  const carousel = document.getElementById("carousel");
+  carousel.innerHTML = "";
+
+  const img = document.createElement("img");
+  img.src = image;
+
+  carousel.appendChild(img);
 }
-images();
+
+loadRandomAlbum();
