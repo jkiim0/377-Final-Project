@@ -82,6 +82,7 @@ body{
     padding: 10px;
     border: solid, 2px, black;
     float: right;
+    width: 25%;
 }
 
 /* user info button (home page) */
