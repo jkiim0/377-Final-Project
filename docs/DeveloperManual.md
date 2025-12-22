@@ -1,4 +1,4 @@
-Installation:
+**Installation:**
 
 Prerequities:
 - Node.js
@@ -12,18 +12,23 @@ Prerequities:
 
 3. If needed, replace supabase url and key. As well as TasteDive and LastFM API keys.
 
-How to Run:
+**How to Run:**
 
 - Start the server using node or nvm start. You should now see where the server is running.
 
-API:
+**API:**
+- Get:
+    - /api/health: used to make sure that the server is running correctly
+    - /users: retrieves all users from the supabase database
+- Post:
+    - /user: created a new user record in the DB
 
 *Currently no tests have been implemented
 
-Bugs:
+**Bugs:**
 - Searches may fail if the artists name is misspelled
 
-Road-Map for Future Development:
+**Road-Map for Future Development:**
 - Dedicated profiles for user authentication
 - Improvement in recommedation of artist
 - Add recommendation based on particular songs
