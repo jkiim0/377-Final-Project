@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require("path");
 const bodyParser = require('body-parser');
-const supabaseClient = require('../../../../../supabaseapp/node_modules/@supabase/supabase-js/src/lib/rest/types/common/common');
+const supabaseClient = require('@supabase/supabase-js');
 const {isValidEmail} = require('@emailcheck/email-validator-js');
 const dotenv = require('dotenv/lib/main');
 

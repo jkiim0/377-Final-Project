@@ -17,6 +17,7 @@ Prerequities:
 - Start the server using node or nvm start. You should now see where the server is running.
 
 **API:**
+The server is built using Node.js and Express.
 - Get:
     - /api/health: used to make sure that the server is running correctly
     - /users: retrieves all users from the supabase database
